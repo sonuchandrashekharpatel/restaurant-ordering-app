@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+            <h1>Sonu's Diner</h1>
+            <h3>The best burgers and pizzas in town.</h3>
+            </header>
+            <main>
+                <div id="resto-items-container">
+                    <section class="item-section">
+                        <h2 class="item">🍕</h2>
+
+                        <div class="item-info">
+                            <h2 class="item-name">Pizza</h2>
+                            <p class="item-ingredients">pepperoni,mushrom,mozarella</p>
+                            <h4 class="item-price">$14</h4>
+                        </div>
+                        <div class="btn-container">
+                            <button class="add-btn">+</button>
+                        </div>
+
+                    </section>                    <section class="item-section">
+                        <h2 class="item">🍕</h2>
+
+                        <div class="item-info">
+                            <h2 class="item-name">Pizza</h2>
+                            <p class="item-ingredients">pepperoni,mushrom,mozarella</p>
+                            <h4 class="item-price">$14</h4>
+                        </div>
+                        <div class="btn-container">
+                            <button class="add-btn">+</button>
+                        </div>
+
+                    </section>                    <section class="item-section">
+                        <h2 class="item">🍕</h2>
+
+                        <div class="item-info">
+                            <h2 class="item-name">Pizza</h2>
+                            <p class="item-ingredients">pepperoni,mushrom,mozarella</p>
+                            <h4 class="item-price">$14</h4>
+                        </div>
+                        <div class="btn-container">
+                            <button class="add-btn">+</button>
+                        </div>
+
+                    </section>
+                </div>
+                
+                <div id="checkout-section" class="checkout-section">
+                        <h2 class="checkout-heading">Your order</h2>
+                        <div class="checkout-items-container flex">
+                            <div class="checkout-item-btn flex">
+                                <h2>Pizza</h2>
+                                <button class="remove-btn">remove</button>
+                            </div>
+                            <h4>$14</h4>
+                        </div>                        <div class="checkout-items-container flex">
+                            <div class="checkout-item-btn flex">
+                                <h2>Pizza</h2>
+                                <button class="remove-btn">remove</button>
+                            </div>
+                            <h4>$14</h4>
+                        </div>                        <div class="checkout-items-container flex">
+                            <div class="checkout-item-btn flex">
+                                <h2>Pizza</h2>
+                                <button class="remove-btn">remove</button>
+                            </div>
+                            <h4>$14</h4>
+                        </div>
+                        <div class="checkout-total-price flex">
+                            <h2>Total Price: </h2>
+                            <h4>$14</h4>
+                        </div>
+                        <button class="complete-order-btn">Complete Order</button>
+                </div>
+                <div id="checkout-modal" class="checkout-modal">
+                    <h3 class="modal-heading">Enter card details</h3>
+                    <form>
+                        <input 
+                            type="text"
+                            placeholder="Enter your name"
+                            name="username"
+                            aria-label="Enter your name"
+                            id="name"
+                            required
+                        >
+                        <input 
+                            type="Number"
+                            placeholder="Enter card number"
+                            aria-label="Enter card number"
+                            name="card-number"
+                            pattern="\d{16}"
+                            id="card-number"
+                            required
+                        >
+                        <input 
+                            type="Number"
+                            placeholder="Enter CVV"
+                            aria-label="Enter CVV"
+                            name="cvv"
+                            id="name"
+                            pattern="\d{3}"
+                            required
+                        >
+                        <button class="pay-btn">Pay</button>
+                    </form>
+                </div>
+                <div id="order-complete-state" class="order-complete-state">
+                    <h2 class="order-completion-text">Thanks, James! Your order is on it's way!</h2>
+                </div>
+            </main>
+        </div>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
