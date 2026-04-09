@@ -15,7 +15,6 @@ body {
     height: 1161px;
     background-color: #fff;
     margin: 0 auto;
-
 }
 
 header {
@@ -71,6 +70,9 @@ h4 {
 .btn-container {
     position: relative;
     margin: 0 0 auto auto;
+}
+button {
+    cursor: pointer;
 }
 
 .add-btn {
