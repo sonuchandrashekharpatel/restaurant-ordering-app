@@ -15,6 +15,7 @@ body {
     height: 1161px;
     background-color: #fff;
     margin: 0 auto;
+
 }
 
 header {
@@ -56,6 +57,12 @@ h4 {
 
 /* layout */
 
+button {
+    cursor: pointer;
+}
+
+
+
 .item-section {
     display: flex;
     border-bottom: 1px solid #D2D2D2;
@@ -71,11 +78,8 @@ h4 {
     position: relative;
     margin: 0 0 auto auto;
 }
-button {
-    cursor: pointer;
-}
 
-.add-btn {
+.plus-btn {
     width: 50px;
     height: 50px;
     color: #3C3C3C;
@@ -85,6 +89,16 @@ button {
     font-size: 32px;
     font-weight: 200;
     border-radius: 50%;
+}
+
+.plus-btn:hover {
+    background-color: lightseagreen;
+}
+
+.plus-btn:active {
+    
+    width: 45px;
+    height: 45px;
 }
 
 .item-ingredients {
