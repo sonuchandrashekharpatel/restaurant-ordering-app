@@ -3,12 +3,89 @@ import { menuArray } from './data.js'
 let cart = []
 const restoItemsContainer = document.getElementById("resto-items-container")
 const checkoutSection = document.getElementById("checkout-section")
+const checkoutModal = document.getElementById("checkout-modal")
+const orderCompleteSection = document.getElementById("order-complete-section")
 
 document.addEventListener("click", (e) => {
+
     if(e.target.className === "plus-btn") {
         handlePlusBtnClick(e.target.id)
     }
+    else if(e.target.className === "remove-btn") {
+        handleRemoveBtnClick(e.target.id)
+    }
+    else if(e.target.id === "complete-order-btn") {
+
+        handleCompleteOrderBtnClick()
+    } else if(e.target.id === "pay-btn") {
+        handlePayBtnClick()
+    }
 })
+
+function handlePayBtnClick() {
+    checkoutModal.style.display = 'none'
+    checkoutSection.style.display = "none"
+
+    const messageDiv = document.createElement("div")
+    messageDiv.className = "order-complete-section"
+    messageDiv.textContent = `Thanks, Sonu! Your order is on it's way!`
+    orderCompleteSection.appendChild(messageDiv)
+    console.log(orderCompleteSection)
+    orderCompleteSection.style.display = "block"
+
+}
+
+function handleCompleteOrderBtnClick() {
+    checkoutModal.style.display = "block"
+    renderCheckoutModal()
+}
+
+function renderCheckoutModal() {
+    checkoutModal.innerHTML = `
+        <h3 class="modal-heading">Enter card details</h3>
+        <form>
+            <input 
+                type="text"
+                placeholder="Enter your name"
+                name="username"
+                aria-label="Enter your name"
+                id="name"
+                required
+            >
+            <input 
+                type="text"
+                placeholder="Enter card number"
+                aria-label="Enter card number"
+                name="card-number"
+                pattern="\d{16}"
+                id="card-number"
+                required
+            >
+            <input 
+                type="text"
+                placeholder="Enter CVV"
+                aria-label="Enter CVV"
+                name="cvv"
+                id="cvv"
+                pattern="\d{3}"
+                required
+            >
+            <button class="pay-btn" id="pay-btn">Pay</button>
+        </form>
+    `
+}
+
+function handleRemoveBtnClick(removeItemId) {
+
+    cart = cart.filter(item => {
+        return item.id !== Number(removeItemId)
+    })
+    if(cart.length > 0) {
+        renderCheckoutHtml(cart)
+    } else {
+        checkoutSection.style.display = "none"
+    }
+}
 
 function handlePlusBtnClick(addItemId) {
 
@@ -22,11 +99,11 @@ function handlePlusBtnClick(addItemId) {
 
     if(cart.length > 0) {
         checkoutSection.style.display = "block"
-        checkoutSection.innerHTML = getCheckoutHtml(cart)
+        renderCheckoutHtml(cart)
     }
 }
 
-function getItemsHtml() {
+function renderItemsHtml() {
 
     const itemsHtml = menuArray.map(menu => {
         
@@ -48,11 +125,11 @@ function getItemsHtml() {
             </section>
         `
     }).join('')
-    return itemsHtml
+    restoItemsContainer.innerHTML = itemsHtml
 
 }
 
-function getCheckoutHtml(itemsCart) {  
+function renderCheckoutHtml(itemsCart) {  
     const checkoutHeadingHtml = `<h2 class="checkout-heading">Your order</h2>`
 
     let totalPrice = 0
@@ -74,20 +151,9 @@ function getCheckoutHtml(itemsCart) {
             <h2>Total Price: </h2>
             <h4>$${totalPrice}</h4>
         </div>
-        <button class="complete-order-btn">Complete Order</button>
+        <button class="complete-order-btn" id="complete-order-btn">Complete Order</button>
     `
-    return checkoutHeadingHtml + checkoutItemsHtml + checkoutTotalPriceHtml
+    checkoutSection.innerHTML = checkoutHeadingHtml + checkoutItemsHtml + checkoutTotalPriceHtml
 }
 
-
-
-function getHtml() {
-    restoItemsContainer.innerHTML = getItemsHtml()
-
-}
-
-function render() {
-    getHtml()
-}
-
-render()
+renderItemsHtml()

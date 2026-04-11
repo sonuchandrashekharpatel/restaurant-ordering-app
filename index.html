@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Restaurant Ordering App</title>
+        <!-- Meta Tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
+        <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
@@ -13,46 +17,15 @@
             <h3>The best burgers and pizzas in town.</h3>
             </header>
             <main>
-                <div id="resto-items-container">
+                <div id="resto-items-container"></div>
 
-                </div>
-                <div id="checkout-section" class="checkout-section">
-                </div>
+                <div id="checkout-section" class="checkout-section"></div>
                 
                 <div id="checkout-modal" class="checkout-modal">
-                    <h3 class="modal-heading">Enter card details</h3>
-                    <form>
-                        <input 
-                            type="text"
-                            placeholder="Enter your name"
-                            name="username"
-                            aria-label="Enter your name"
-                            id="name"
-                            required
-                        >
-                        <input 
-                            type="Number"
-                            placeholder="Enter card number"
-                            aria-label="Enter card number"
-                            name="card-number"
-                            pattern="\d{16}"
-                            id="card-number"
-                            required
-                        >
-                        <input 
-                            type="Number"
-                            placeholder="Enter CVV"
-                            aria-label="Enter CVV"
-                            name="cvv"
-                            id="name"
-                            pattern="\d{3}"
-                            required
-                        >
-                        <button class="pay-btn">Pay</button>
-                    </form>
+
                 </div>
-                <div id="order-complete-state" class="order-complete-state">
-                    <h2 class="order-completion-text">Thanks, Sonu! Your order is on it's way!</h2>
+                <div id="order-complete-section" class="complete-order-message">
+
                 </div>
             </main>
         </div>
